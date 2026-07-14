@@ -4,6 +4,7 @@ import morgan from "morgan";
 import dns from "dns";
 import env from "#env";
 import paymentRoutes from "../routes/paymentRoutes.js";
+import authRoutes from "../routes/authRoutes.js";
 
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
@@ -19,5 +20,6 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/payments", paymentRoutes);
+app.use("/api/auth", authRoutes);
 
 export default app;
